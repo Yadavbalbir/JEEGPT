@@ -1,0 +1,3 @@
+- [JEE GPT Notebook](https://colab.research.google.com/drive/1RxNyRLo_nbLnajQchNMMPHPCRnRe2x93?usp=sharing)
+- [Googlesheets](https://docs.google.com/spreadsheets/d/1jkNmucIIzP3weB2KEGCH3QEcWdAocYcDZfFOS_QUfZ8/edit#gid=0)
+- [Presentation Slides](https://google.com/)
