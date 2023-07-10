@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>JEEGPT - Your JEE Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="description" content="This is meta description">
+    <meta name="author" content="Themefisher">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- theme meta -->
+    <meta name="theme-name" content="wallet" />
+
+    <!-- # Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- # CSS Plugins -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/font-awesome/fontawesome.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome/brands.css">
+    <link rel="stylesheet" href="plugins/font-awesome/solid.css">
+
+    <!-- # Main Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <header class="navigation bg-tertiary">
+        <nav class="navbar navbar-expand-xl navbar-light text-center py-3">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">JEEGPT
+                    <!-- <img loading="prelaod" decoding="async" class="img-fluid" width="160" src="images/logo.png" alt="Wallet"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"> <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item "> <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item "> <a class="nav-link" href="about.html">Demo</a>
+                        </li>
+                        <li class="nav-item "> <a class="nav-link" href="how-it-works.html">How It Works</a>
+                        </li>
+                        <li class="nav-item "> <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item "> <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="blog.html">Blog</a>
+                                </li>
+                                <li><a class="dropdown-item " href="blog-details.html">Blog Details</a>
+                                </li>
+                                <li><a class="dropdown-item " href="service-details.html">Service Details</a>
+                                </li>
+                                <li><a class="dropdown-item " href="faq.html">FAQ&#39;s</a>
+                                </li>
+                                <li><a class="dropdown-item " href="legal.html">Legal</a>
+                                </li>
+                                <li><a class="dropdown-item " href="terms.html">Terms &amp; Condition</a>
+                                </li>
+                                <li><a class="dropdown-item " href="privacy-policy.html">Privacy &amp; Policy</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- account btn --> <a href="#!" class="btn btn-outline-primary">Log In</a>
+                    <!-- account btn --> <a href="#!" class="btn btn-primary ms-2 ms-lg-3">Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- /navigation -->
+
+    <!-- ChatBot -->
+
+    <div class="container ">
+        <div class="container chat-container">
+            <h3 class="box-shadow text-center py-2">Chat With JEE GPT</h3>
+
+            <div class="chat-box" id="chatBox">
+
+            </div>
+
+            <form id="messageForm" class="fixed-bottom container">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control px-2" placeholder="Type your message" id="inputMessage">
+                    <div class="input-group-append px-2">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        window.onload = function () {
+                var chatBox = document.getElementById("chatBox");
+                var messageElement = document.createElement("div");
+                messageElement.classList.add("p-2", "rounded-3", "shadow", "mb-2");
+                messageElement.classList.add("bg-dark", "text-white", "leftaligned");
+                messageElement.innerHTML = "How may I help you?";
+                chatBox.appendChild(messageElement);
+                chatBox.classList.add("container", "px-5");
+                chatBox.scrollTop = chatBox.scrollHeight;
+            };
+        
+
+
+        function sendMessage(event) {
+            event.preventDefault();
+            var message = document.getElementById("inputMessage").value;
+            if (message.trim() !== "") {
+                addMessageToChatBox(message, "user");
+                // Send the message to the server or process it as needed
+                // In this example, we'll just simulate a bot response after a delay
+
+                var botResponse = "This is a sample response.";
+                addMessageToChatBox(botResponse, "bot");
+
+                document.getElementById("inputMessage").value = "";
+            }
+        }
+
+        function addMessageToChatBox(message, sender) {
+            var chatBox = document.getElementById("chatBox");
+
+
+            var messageElement = document.createElement("div");
+            messageElement.classList.add("p-2", "rounded-3", "shadow", "mb-2");
+
+
+            if (sender === "user") {
+                messageElement.classList.add("bg-primary", "text-white", "rightaligned");
+                messageElement.innerHTML = message;
+
+            } else {
+                messageElement.classList.add("bg-dark", "text-white", "leftaligned");
+                messageElement.innerHTML = message;
+
+            }
+
+
+            chatBox.appendChild(messageElement);
+            chatBox.classList.add("container", "px-5");
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+
+
+        }
+        var messageForm = document.getElementById("messageForm");
+        messageForm.addEventListener("submit", sendMessage);
+    </script>
+
+
+
+
+    <!-- # JS Plugins -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/scrollmenu/scrollmenu.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
