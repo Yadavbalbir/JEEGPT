@@ -4,7 +4,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 import os
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 persist_directory = 'db'
 embedding = OpenAIEmbeddings()
 
