@@ -135,6 +135,29 @@
                 // Send the message to the server or process it as needed
                 // In this example, we'll just simulate a bot response after a delay
 
+                var res = '';
+                fetch('http://127.0.0.1:5000/api/jeegpt', {
+                    method: 'POST',  // HTTP method (e.g., GET, POST, PUT, DELETE)
+                    headers: {
+                        'Content-Type': 'application/json',  // Specify the content type
+                    },
+                    body: JSON.stringify({ "query": message }),  // Convert data to JSON string
+                })
+                    .then(response => response.json())  // Parse the response as JSON
+                    .then(data => {
+                        // Process the returned data
+                        console.log(data);
+                        res = res + data.message;
+                        console.log("res", res);
+                        appendMessage(res, 'bot');
+                    })
+                    .catch(error => {
+                        // Handle any errors
+                        console.error('Error:', error);
+                    });
+
+
+
                 var botResponse = "This is a sample response.";
                 addMessageToChatBox(botResponse, "bot");
 
