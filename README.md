@@ -9,3 +9,4 @@
 5. Install the required dependencies `pip install -r requirements.txt`
 
 ![Frontend](ss/screenshot-1.png)
+![Demo](ss/ss-2.png)
