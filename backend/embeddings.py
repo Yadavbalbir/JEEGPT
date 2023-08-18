@@ -8,7 +8,7 @@ from langchain.chains import RetrievalQA
 from langchain.document_loaders import TextLoader
 from langchain.document_loaders import DirectoryLoader
 <<<<<<< HEAD
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "My_API_KEY"
 =======
 os.environ["OPENAI_API_KEY"] = ""
 >>>>>>> 4770934458160b4633d04f17e6dc6e97916a1101
